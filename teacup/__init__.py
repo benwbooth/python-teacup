@@ -12,6 +12,8 @@ for outputting prettified HTML.
 
 Example usage::
 
+    from teacup import *
+
     with html:
         with head:
             pass

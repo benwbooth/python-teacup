@@ -12,6 +12,8 @@ for outputting prettified HTML.
 
 Example usage::
 
+    from teacup import *
+
     with html:
         with head:
             pass
@@ -32,7 +34,7 @@ from setuptools import setup
 
 setup(
     name='teacup',
-    version='0.1',
+    version='0.2',
     url='https://github.com/benwbooth/python-teacup',
     author='Ben Booth',
     author_email='benwbooth@gmail.com',
