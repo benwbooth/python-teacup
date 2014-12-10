@@ -20,7 +20,7 @@ Example usage::
         with body:
             with p:
                 md("This is a **test!**")
-            with p:
+            with p({"class":"test"}, id="testme"):
                 text("Another test")
                 a("Click here", href="https://google.com")
 
@@ -98,8 +98,12 @@ class Tag:
         self.tagName = tagName
         self.startTag = startTag;
     def __call__(self, *args, **attrs):
+        text = ''
+        for arg in args:
+            if type(arg) is dict: attrs.update(arg)
+            else: text += str(arg)
         self.doc.raw("<{}{}>".format(self.tagName, self.doc.renderAttrs(attrs)))
-        for arg in args: self.doc.text(arg)
+        self.doc.text(text)
         self.doc.htmlOutBuffer = "</{}>".format(self.tagName)
         return Tag(self.doc, self.tagName, False)
     def __enter__(self):

@@ -7,7 +7,7 @@ with html:
     with body:
         with p:
             md("""This is a **test!**""")
-        with p:
+        with p({"class":"test"}, id="testme"):
             text("Another test")
             a("Click here", href="https://google.com")
 

@@ -20,7 +20,7 @@ Example usage::
         with body:
             with p:
                 md("This is a **test!**")
-            with p:
+            with p({"class":"test"}, id="testme"):
                 text("Another test")
                 a("Click here", href="https://google.com")
 
@@ -34,7 +34,7 @@ from setuptools import setup
 
 setup(
     name='teacup',
-    version='0.2',
+    version='0.3',
     url='https://github.com/benwbooth/python-teacup',
     author='Ben Booth',
     author_email='benwbooth@gmail.com',
