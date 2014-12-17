@@ -34,7 +34,7 @@ from setuptools import setup
 
 setup(
     name='teacup',
-    version='0.5',
+    version='0.6',
     url='https://github.com/benwbooth/python-teacup',
     author='Ben Booth',
     author_email='benwbooth@gmail.com',

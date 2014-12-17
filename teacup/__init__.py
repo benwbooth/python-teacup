@@ -128,7 +128,7 @@ class Doc:
         for tagName in merge_elements('regular', 'obsolete'):
             setattr(self, tagName, Tag(self, tagName))
 
-    def render(self, html=None, pretty=True, *args, **kwargs):
+    def render(self, html=None, pretty=False, *args, **kwargs):
         previous = self.htmlOut + self.htmlOutBuffer
         self.htmlOut = html
         self.htmlOutBuffer = ''
