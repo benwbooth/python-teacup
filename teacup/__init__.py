@@ -100,8 +100,12 @@ class Tag:
     def __call__(self, *args, **attrs):
         text = ''
         for arg in args:
-            if type(arg) is dict: attrs.update(arg)
-            else: text += str(arg)
+            if type(arg) is dict:
+                attrs.update(arg)
+            elif type(arg) in (Ie, Tag, Doc):
+                raise Exception("Tags cannot be passed as arguments to other tags (Use \"with\" blocks instead)")
+            else:
+                text += str(arg)
         self.doc.raw("<{}{}>".format(self.tagName, self.doc.renderAttrs(attrs)))
         self.doc.text(text)
         self.doc.htmlOutBuffer = "</{}>".format(self.tagName)
