@@ -100,7 +100,9 @@ class Tag:
     def __call__(self, *args, **attrs):
         text = ''
         for arg in args:
-            if type(arg) is dict:
+            if arg is None:
+                raise Exception("None argument was passed in to tag {}".format(self.tagName))
+            elif type(arg) is dict:
                 attrs.update(arg)
             elif type(arg) in (Ie, Tag, Doc):
                 raise Exception("Tags cannot be passed as arguments to other tags (Use \"with\" blocks instead)")

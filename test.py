@@ -11,5 +11,5 @@ with html:
             text("Another test")
             a("Click here", href="https://google.com")
 
-#print(render(pretty=False))
-print(render())
+print(render(pretty=True))
+#print(render())
