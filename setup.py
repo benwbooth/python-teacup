@@ -34,7 +34,7 @@ from setuptools import setup
 
 setup(
     name='teacup',
-    version='0.7',
+    version='0.8',
     url='https://github.com/benwbooth/python-teacup',
     author='Ben Booth',
     author_email='benwbooth@gmail.com',
@@ -42,5 +42,5 @@ setup(
     keywords="python module html markdown teacup coffeecup coffeekup templating template library",
     zip_safe=True,
     description="HTML Templating DSL for Python",
-    packages=['teacup'],
+    py_modules=['teacup'],
     install_requires=['beautifulsoup4','mistune'])
